@@ -17,7 +17,7 @@
 
 ## Extensions and known limitations
 
-Oleksandr didn't try the optional Core A extensions
+Oleksandr and Liubomyr didn't try the optional Core A extensions
 
 ## Execution
 
