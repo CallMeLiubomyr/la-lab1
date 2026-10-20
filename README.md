@@ -1,24 +1,44 @@
-# LAB1 of Linear Algebra course
+# Labs for Linear Algebra course (UCU)
 
-## Team
+## Labs
 
-- Liubomyr Smerek
-- Oleksandr Korniienko
+- [Lab 1: Least squares and Fourier analysis](lab1/README.md)
+- [Lab 2: Power iteration and PageRank](lab2/README.md)
 
-## Division of work
+Each lab keeps its notebooks, documentation, and any input data in its own
+directory. All labs use one local virtual environment at the repository root.
 
-- Core A (least squares, conditioning, and QR): Oleksandr Korniienko
-- Core B (Fourier): Liubomyr Smerek
+## Setup
 
-## Environment
+Use Python 3.14.7 for a consistent environment across the team. From the
+repository root on macOS or Linux:
 
-- NumPy: 2.4.6
-- pandas: 3.0.6
+```sh
+python3.14 --version  # Expected: Python 3.14.7
+python3.14 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m pip check
+```
 
-## Extensions and known limitations
+If `.venv` already exists with this Python version, activate it and install the
+requirements without recreating it. Each teammate creates their own `.venv`;
+it is ignored by Git. Commit dependency changes to the root `requirements.txt`.
 
-Oleksandr and Liubomyr didn't try the optional Core A extensions
+## Running notebooks
 
-## Execution
+Open the repository in VS Code with the Python and Jupyter extensions installed.
+Open a notebook, choose **Select Kernel → Python Environments**, and select the
+repository's `.venv/bin/python`.
 
-The required notebook cells were run and their outputs were saved. The notebooks should be run top to bottom from a clean kernel using **Restart & Run All** before submission; no results depend on executing cells out of order.
+Run notebooks with their lab directory as the working directory. In particular,
+Lab 1 reads `land-temp-1850-2015.csv` relative to `lab1/`. If the file is not
+found, check the kernel's working directory with `Path.cwd()` from `pathlib`.
+
+Use **Restart & Run All** before submission and save the resulting outputs.
+Existing saved outputs may record older Python or package versions; rerunning
+with the shared environment refreshes them.
+
+When changing shared dependency versions, rerun the notebooks in both labs to
+check compatibility. Use separate lab environments only if future labs require
+incompatible Python or package versions.
